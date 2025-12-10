@@ -1,0 +1,182 @@
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Cabeçalho */
+.main-header {
+    background-color: #ff5722; /* Laranja da imagem */
+    color: white;
+    padding: 10px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 40px;
+    max-width: 500px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #e64a19;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.user-icons i {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Layout principal com sidebar e conteúdo */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.sidebar {
+    flex-basis: 250px;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+    color: #ff5722;
+}
+
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.filter-button, .sidebar select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Listagem de carros (Grid Layout) */
+.car-listings {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
+    gap: 20px;
+}
+
+.car-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.car-card img {
+    width: 100%;
+    height: 150px; /* Altura fixa para as imagens */
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 15px;
+}
+
+.car-info h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.car-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.car-info a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Rodapé */
+.main-footer {
+    background-color: #ff5722;
+    height: 100px;
+    margin-top: 20px;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .logo, .user-icons {
+        margin: 10px 0;
+    }
+}

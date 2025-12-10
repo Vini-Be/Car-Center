@@ -1,0 +1,147 @@
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef4f7; /* Fundo suave */
+    color: #333;
+}
+
+:root {
+    --primary-color: #ff5722; /* Laranja accent */
+    --secondary-color: #e64a19;
+    --card-bg: #fff;
+    --text-color: #333;
+    --placeholder-bg: #e0e0e0; /* Cinza claro para os placeholders */
+}
+
+/* --- Header e Footer (Reutilizados do anterior) --- */
+.main-header, .main-footer {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.main-header {
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo { font-size: 20px; font-weight: bold; }
+
+.search-bar { display: flex; flex-grow: 1; margin: 0 40px; max-width: 500px; }
+.search-bar input { width: 100%; padding: 10px 15px; border: none; border-radius: 4px 0 0 4px; }
+.search-bar button { padding: 10px 15px; border: none; background-color: var(--secondary-color); color: white; border-radius: 0 4px 4px 0; cursor: pointer; }
+
+.user-icons i { margin-left: 20px; cursor: pointer; font-size: 20px; }
+
+.main-footer {
+    height: 80px;
+    margin-top: 40px;
+}
+
+/* --- Layout Principal --- */
+.main-container {
+    max-width: 1000px; /* Definindo um tamanho fixo para o container central */
+    margin: 40px auto; /* Centraliza na tela */
+    padding: 0 20px;
+}
+
+.detail-page-container {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra mais suave */
+    padding: 30px;
+    gap: 30px; /* Espaçamento entre as duas colunas */
+}
+
+/* Área da Esquerda (Mídia) */
+.media-area {
+    flex: 1; /* Ocupa metade do espaço */
+}
+
+.main-image-placeholder {
+    width: 100%;
+    height: 350px; /* Altura fixa para a imagem grande */
+    background-color: var(--placeholder-bg);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que a tag img dentro se ajuste */
+}
+
+.main-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém a proporção da imagem dentro do container */
+}
+
+.thumbnail-placeholders {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 70px;
+    height: 70px;
+    background-color: var(--placeholder-bg);
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+
+/* Área da Direita (Detalhes/Campos) */
+.details-area {
+    flex: 1; /* Ocupa metade do espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-box {
+    padding: 15px;
+    background-color: var(--placeholder-bg); /* Fundo cinza claro */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: #666;
+    font-weight: bold;
+    text-align: center;
+    height: 50px; /* Altura uniforme para os campos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .detail-page-container {
+        flex-direction: column; /* Empilha as colunas em telas menores */
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+        width: 100%;
+    }
+}

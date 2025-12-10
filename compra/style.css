@@ -1,0 +1,221 @@
+/* Reset básico e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte ligeiramente mais profissional */
+    background-color: #eef4f7; /* Fundo mais suave (azul claro acinzentado) */
+    color: #333;
+}
+
+/* Variáveis CSS para fácil manutenção das cores */
+:root {
+    --primary-color: #ff5722; /* Laranja accent */
+    --secondary-color: #e64a19;
+    --card-bg: #fff;
+    --text-color: #333;
+}
+
+/* Cabeçalho */
+.main-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 20px; /* Ligeiramente menor */
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 40px;
+    max-width: 500px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 15px; /* Mais padding */
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.user-icons i {
+    margin-left: 20px; /* Mais espaçamento */
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Layout principal e cartão de detalhes */
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.back-link {
+    margin-bottom: 15px;
+}
+
+.back-link a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.car-detail-card {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Galeria de Imagens */
+.image-gallery {
+    flex-basis: 60%; /* Ocupa mais espaço que os detalhes */
+    padding: 20px;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnail.active {
+    border-color: var(--primary-color);
+}
+
+/* Detalhes do carro (Sidebar) */
+.details-sidebar {
+    flex-basis: 40%;
+    padding: 30px; /* Mais padding para um visual mais limpo */
+}
+
+.details-sidebar h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+}
+
+.car-specs p {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.car-specs strong {
+    color: #666;
+}
+
+/* Botões de ação */
+.action-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-primary, .btn-secondary, .btn-plate {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-plate {
+    background: linear-gradient(to right, #003366, #0056b3); /* Fundo azul escuro gradiente */
+    color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Rodapé */
+.main-footer {
+    background-color: var(--primary-color);
+    height: 80px;
+    margin-top: 40px;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .car-detail-card {
+        flex-direction: column;
+    }
+    
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .logo, .user-icons {
+        margin: 10px 0;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Center - Login</title>
+  <link rel="stylesheet" href="styleLogin.css">
+</head>
+
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="top-bar"></div>
+
+  <!-- CONTEÚDO -->
+  <main class="login-bg">
+      <div class="login-container">
+          <h2>Entrar</h2>
+
+          <form id="loginForm">
+              <input type="email" id="email" placeholder="Email" required>
+              <input type="password" id="senha" placeholder="Senha" required>
+              <button type="submit">Entrar</button>
+          </form>
+
+          <button class="google-btn">Entrar com Google</button>
+
+          <p class="cadastro-texto">
+              Não tem uma conta? <a href="/cadastro/cadastro.html" class="btn-cadastro">Crie uma agora</a>
+          </p>
+
+          <a href="../landingpage/index.html" class="VOLTAR">Voltar</a>
+      </div>
+  </main>
+
+  <!-- BARRA INFERIOR -->
+  <footer>
+      <div class="bottom-bar"></div>
+  </footer>
+
+  <!-- Código gerado com auxílio de IA -->
+
+ <script>
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value.trim();
+
+    // Carrega usuários cadastrados
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Verifica se existe um usuário com esse email e senha
+    const userFound = usuarios.find(user => user.email === email && user.senha === senha);
+
+    if (userFound) {
+        alert("Login realizado com sucesso!");
+        // Caminho RELATIVO correto: voltar uma pasta e entrar em buscar/
+        window.location.href = "../buscar/buscar.html";
+        return;
+    } 
+    
+    // login fixo opcional
+    if (email === "admin@gmail.com" && senha === "123") {
+        window.location.href = "../buscar/buscar.html";
+        return;
+    } 
+    
+    alert("Email ou senha incorretos!");
+});
+</script>
+
+</body>
+</html>

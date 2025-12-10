@@ -1,0 +1,95 @@
+/* GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+  background: #ff6a00;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.header .menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* NOVO ESTILO PARA AGRUPAR OS BOTÕES NA DIREITA */
+.botoes-direita {
+    display: flex;
+    gap: 15px; /* Espaço entre "Entrar" e "Voltar" */
+    align-items: center;
+}
+
+.btn-login {
+    background: #fff;
+    color: #ff6a00;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.btn-voltar {
+    background: #fff;
+    color: #ff6a00;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* CONTAINER CENTRAL */
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  width: 400px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px #00000044;
+}
+
+/* CAMPO DE BUSCA */
+.card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* BOTÕES */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: #ff6a00;
+  color: white;
+  font-size: 16px;
+}
+
+/* FOOTER */
+footer {
+  background: #ff6a00;
+  height: 200px;
+  margin-top: 80px;
+}

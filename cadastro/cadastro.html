@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Registrar - Car Center</title>
+    <link rel="stylesheet" href="styleCadastro.css" />
+
+    <!-- Código gerado com auxílio de IA -->
+    <style>
+      .container {
+        max-width: 420px;
+        margin: 60px auto;
+        padding: 22px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        background: #ff6a00;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      small {
+        display: block;
+        color: #666;
+        margin-top: 8px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Cadastro</h2>
+
+      <form id="registerForm" novalidate>
+        <input id="nome" type="text" placeholder="Nome completo" required />
+        <input id="email" type="email" placeholder="Email" required />
+        <input
+          id="senha"
+          type="password"
+          placeholder="Senha (mín. 6 caracteres)"
+          required
+        />
+        <button type="submit">Registrar</button>
+      </form>
+
+      <small
+        >Já tem conta?
+        <a class="btn-login" href="/login/login.html">Entrar</a></small
+      >
+    </div>
+
+    <script>
+      /* Funções utilitárias */ /* Código gerado com auxílio de IA */
+      function getUsers() {
+        try {
+          return JSON.parse(localStorage.getItem("usuarios")) || [];
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function saveUsers(users) {
+        localStorage.setItem("usuarios", JSON.stringify(users));
+      }
+
+      /* Validações */
+      function validEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function validPassword(pw) {
+        return pw.length >= 6;
+      }
+
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const nome = document.getElementById("nome").value.trim();
+          const email = document
+            .getElementById("email")
+            .value.trim()
+            .toLowerCase();
+          const senha = document.getElementById("senha").value;
+
+          if (!nome) {
+            alert("Preencha seu nome.");
+            return;
+          }
+          if (!validEmail(email)) {
+            alert("Email inválido.");
+            return;
+          }
+          if (!validPassword(senha)) {
+            alert("A senha precisa ter no mínimo 6 caracteres.");
+            return;
+          }
+
+          const users = getUsers();
+
+          if (users.some((u) => u.email === email)) {
+            alert("Já existe um usuário com esse email.");
+            return;
+          }
+
+          users.push({ nome, email, senha });
+          saveUsers(users);
+
+          alert("Registrado com sucesso! Faça login agora.");
+
+          // Caminho CORRETO para sua tela de login
+          window.location.href = "/login/login.html";
+        });
+    </script>
+  </body>
+</html>
