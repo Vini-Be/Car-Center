@@ -25,13 +25,17 @@
         <button class="google-btn">Entrar com Google</button>
 
         <p class="cadastro-texto">
-          Não tem uma conta?<a
+          Não tem uma conta?
+          <a
             href="https://vini-be.github.io/Car-Center/cadastro/cadastro.html"
             class="btn-cadastro"
             >Crie uma agora</a
           >
         </p>
-        <a href="https://vini-be.github.io/Car-Center/index.html" class="VOLTAR"
+
+        <a
+          href="https://vini-be.github.io/Car-Center/index.html"
+          class="VOLTAR"
           >Voltar</a
         >
       </div>
@@ -43,7 +47,6 @@
     </footer>
 
     <!-- Código gerado com auxílio de IA -->
-
     <script>
       document
         .getElementById("loginForm")
@@ -53,17 +56,14 @@
           const email = document.getElementById("email").value.trim();
           const senha = document.getElementById("senha").value.trim();
 
-          // Carrega usuários cadastrados
           let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-          // Verifica se existe um usuário com esse email e senha
           const userFound = usuarios.find(
             (user) => user.email === email && user.senha === senha
           );
 
           if (userFound) {
             alert("Login realizado com sucesso!");
-            // Caminho RELATIVO correto: voltar uma pasta e entrar em buscar/
             window.location.href = "../buscar/buscar.html";
             return;
           }
