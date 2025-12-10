@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Registrar - Car Center</title>
-    <link rel="stylesheet" href="styleCadastro.css" />
+    <link rel="stylesheet" href="./styleCadastro.css" />
   </head>
 
   <body>
@@ -23,14 +23,13 @@
         <button type="submit">Registrar</button>
       </form>
 
-      <small
-        >Já tem conta?
-        <a class="btn-login" href="../login/login.html">Entrar</a></small
-      >
+      <small>
+        Já tem conta?
+        <a class="btn-login" href="../login/login.html">Entrar</a>
+      </small>
     </div>
 
     <script>
-      /* Funções utilitárias */ /* Código gerado com auxílio de IA */
       function getUsers() {
         try {
           return JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -43,7 +42,6 @@
         localStorage.setItem("usuarios", JSON.stringify(users));
       }
 
-      /* Validações */
       function validEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       }
@@ -52,7 +50,6 @@
         return pw.length >= 6;
       }
 
-      /*Código gerado com auxílio de IA */
       document
         .getElementById("registerForm")
         .addEventListener("submit", function (e) {
@@ -90,7 +87,6 @@
 
           alert("Registrado com sucesso! Faça login agora.");
 
-          // Caminho CORRETO para sua tela de login
           window.location.href = "../login/login.html";
         });
     </script>

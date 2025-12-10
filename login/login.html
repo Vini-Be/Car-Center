@@ -26,12 +26,12 @@
 
         <p class="cadastro-texto">
           Não tem uma conta?
-          <a href="/cadastro/cadastro.html" class="btn-cadastro"
+          <a href="../cadastro/cadastro.html" class="btn-cadastro"
             >Crie uma agora</a
           >
         </p>
 
-        <a href="/index.html" class="VOLTAR">Voltar</a>
+        <a href="./index.html" class="VOLTAR">Voltar</a>
       </div>
     </main>
 
@@ -62,12 +62,6 @@
           if (userFound) {
             alert("Login realizado com sucesso!");
             // Caminho RELATIVO correto: voltar uma pasta e entrar em buscar/
-            window.location.href = "../buscar/buscar.html";
-            return;
-          }
-
-          // login fixo opcional
-          if (email === "admin@gmail.com" && senha === "123") {
             window.location.href = "../buscar/buscar.html";
             return;
           }
